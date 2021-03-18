@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Reports - Suburban Diagnostics </title>
+    <script src="/ScanMe/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+
+
+
+
+
+
+
+<link href="/ScanMe/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+<link href="/ScanMe/Content/suburban.css" rel="stylesheet" type="text/css" />
+<link href="/ScanMe/Content/master.css" rel="stylesheet" type="text/css" />
+<link href="/ScanMe/Content/kendo/2017.2.621/kendo.common.min.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/redmond/jquery-ui.css" />
+
+<link href="/ScanMe/Content/ui.notify.css" rel="stylesheet" />
+
+
+<link href="/ScanMe/Content/kendo/2017.2.621/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="/ScanMe/Scripts/kendo/2017.2.621/jquery.min.js"></script>
+<script src="/ScanMe/Scripts/kendo/2017.2.621/angular.min.js"></script>
+<script src="/ScanMe/Scripts/kendo/2017.2.621/jszip.min.js"></script>
+<script src="/ScanMe/Scripts/kendo/2017.2.621/kendo.all.min.js"></script>
+<script src="/ScanMe/Scripts/kendo/2017.2.621/kendo.aspnetmvc.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.js" type="text/javascript"></script>
+<script src="/ScanMe/Scripts/jquery.notify.js"></script>
+
+
+
+<script src="/ScanMe/Scripts/run_prettify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+<link href="/ScanMe/Content/suburban-common.css" rel="stylesheet" />
+<link href="/ScanMe/Content/dashboard_style.css" rel="stylesheet" />
+
+
+<link rel="icon" href="/ScanMe/Images/favicon3.png" type="image/x-icon">
+<link rel="shortcut icon" href="/ScanMe/Images/favicon3.png" type="image/x-icon">
+<!-- Google Tag Manager in HEAD-->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K8FTHV9');</script>
+<!-- End Google Tag Manager -->
+<style>
+    body {
+        -ms-overflow-style: scrollbar !important;
+    }
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<!--New SD Head Changes-->
+    <link href="/ScanMe/Content/Site.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+
+
+
+
+<body>
+    
+    <div class="container">
+        <div class="overlay-cust" style="display: none">
+            <div class="loading-img">
+                
+            </div>
+        </div>
+        <section class="hero__header--section">
+            
+            
+            
+
+
+            <style>
+                .header-padding-cls {
+                    padding-top: 6px;
+                }
+            </style>
+
+            <!--new header-->
+            <div class="dashboardheaderWrapper dashboard_header">
+                <div class="dashboardheaderWrapper">
+                    <div class="dashboardcenterWrapper">
+                        <div class="dashboardlogoWrapper">
+                            <div class="dashboard-logo">
+                                <a href="https://www.suburbandiagnostics.com/"><img src="logo.png" width="352" height="119" class="logo"></a>
+                            </div>
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--New header ends-->
+
+        </section>
+
+        
+        <section>
+            <div class="container-fluid">
+                <div class="row " id="dashbord-row">
+                    <!--style="background-color: #1d1d1d"-->
+                    <div class="col-lg-12" id="dashbord-row-col">
+                        
+                        
+
+
+                        
+
+
+
+<form action="/ScanMe/Patient/PreviewReport/ReportForm" method="post">    <input type="hidden" id="flag" name="flag" value="0" />
+   
+    <div class="panel panel-info" id="errorhide">
+        <div class="panel-body">
+            <div class="form-group">
+                
+                
+                <div class="alert alert-danger">
+                    <div style="font-size:large"></div>
+              
+                    <div style="font-size:large"></div>
+                    <br />
+                    <div style="font-size:large"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutter-3 sd-skinning-wrapper" style="padding-top:10px;" id="BillGridRow">
+        <div class="col-lg-12 sd-skinning-lhs-top">
+            <div class="row no-gutter">
+                <div class="col-lg-12 GridBillWiseTooltip1">
+                    <div class="panel panel-default">
+                        
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"><h1>PATIENT DETAILS</h1></div>
+                            </div>
+                        
+                        
+                        <div class="panel-body">
+                            <div class="row">
+                                <table>
+                                    <tr>
+                                        <td><div class="col-md-2 col-xs-5" style="font-weight:bold">NAME :</div></td>
+                                        <td> <div class="col-md-4 col-xs-7">AMAN AMAR BAGRECHA</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="col-md-2 col-xs-5" style="font-weight:bold">SID :</div></td>
+                                        <td> <div class="col-md-4 col-xs-7">177802738295</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="col-md-2 col-xs-5" style="font-weight:bold">Registration Center :</div></td>
+                                        <td><div class="col-md-4 col-xs-7">Dehmi Kalan, Kaiser Diagnostics</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="col-md-2 col-xs-5" style="font-weight:bold">Registration Date :</div></td>
+                                        <td> <div class="col-md-4 col-xs-7">18-03-2021 11:54</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="col-md-2 col-xs-5" style="font-weight:bold">Collection Date :</div></td>
+                                        <td> <div class="col-md-4 col-xs-7">18-03-2021 11:54</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="col-md-2 col-xs-5" style="font-weight:bold">Report Date :</div></td>
+                                        <td> <div class="col-md-4 col-xs-7">19-03-2021 10:36</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="col-md-2 col-xs-5" style="font-weight:bold">Printed :</div></td>
+                                        <td> <div class="col-md-4 col-xs-7">19-03-2021 10:36</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="col-md-2 col-xs-5" style="font-weight:bold">Date of Birth :</div></td>
+                                        <td><div class="col-md-4 col-xs-7">11-07-1999</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <div class="col-md-2 col-xs-5" style="font-weight:bold">Age :</div></td>
+                                        <td>  <div class="col-md-4 col-xs-7">21</div> </td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="col-md-2 col-xs-5" style="font-weight:bold">Gender :</div></td>
+                                        <td> <div class="col-md-4 col-xs-7">Male</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="col-md-2 col-xs-5" style="font-weight:bold">Result:</div></td>
+                                        <td><div class="col-md-4 col-xs-7"><h1>Negative</h1></div></td>
+                                    </tr>
+                                    
+                                </table>
+                                
+                               
+                               
+                                
+                                
+                                
+                               
+                               
+                               
+                            </div>
+                     
+                          
+                        </div>
+                    </div>
+
+                     
+                   
+                </div>
+            </div>
+
+           
+
+            
+        </div>
+
+    
+   
+          
+
+
+            </div>
+</form>  
+
+
+                    
+
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+        </style>
+        <div>
+            &nbsp;
+        </div>
+        <footer>
+            <!--Footer-->
+<div class="dasboard_footer dashboard_foot">
+    <div class="dashboardborder"></div>
+    <div class="dashboardcenterWrapper">
+        <div class="dasboard-footer-col-50">
+            <ul class="dasboard_social_nw">
+                <li class="foot"> <span class="dasboard_connect_text ">Contact us : Vaishali Nagar ,Jaipur 324005</span></li>
+                
+            </ul>
+        </div>
+        <div class="dasboard-footer-col-50">
+            <ul class="dasboard_copyright_menu">
+                <li>Copyright © 2020</li>
+                
+                <li><a href="https://www.suburbandiagnostics.com/privacy-policy/">Privacy Policy</a></li>
+                <li><a href="https://www.suburbandiagnostics.com/terms-conditions-business/">Terms of use</a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id="footer" class="footer" style="display:none;">
+
+    <div class="container">
+        
+
+        <div class="row">
+            <div class="col-md-7">
+                <p>Copyright © Suburban Diagnostics, 2017. All Rights Reserved.</p>
+            </div>
+            <div class="col-md-5 text-right ">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+        </footer>
+
+
+       
+
+
+
+
+
+
+    </div>
+</body>
+</html>
+

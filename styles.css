@@ -1,0 +1,10 @@
+*{
+    text-align: center;
+}
+.logo{
+    position: relative;
+    left: 50px ;
+}
+.foot{
+    float: left;
+}
